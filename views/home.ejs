@@ -1,0 +1,35 @@
+<% include ./partials/header %>
+
+<section class="page-section clearfix">
+    
+    <div class="container">
+        <div class="row">
+
+        <% data.forEach((d)=>{ %>
+            <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="<%= d.postImg %>" alt="Card image cap">
+                    <div class="card-body" id="ilan">
+                    <h3 class="card-title"><%= d.postTitle %></h5>
+                    <h5 class="card-text"><%= d.postType %></h1>
+                    <h5 class="card-text"><%= d.userCity %></h1>
+                    <button onclick="myFunction()" class="btn btn-warning">Telefon Numarası</button>
+                    <h6 class="card-text" id="cellPhoneNumber"></h1>
+                    <p class="card-text"><%= d.postNote %></p>
+                    </div>
+                </div>
+        <%  }); %>
+        </div>
+
+      </div>
+
+</section>
+
+<script>
+    function myFunction() {
+        document.getElementById("cellPhoneNumber").innerHTML = "";
+    }
+</script>
+
+
+
+<% include ./partials/footer %>
