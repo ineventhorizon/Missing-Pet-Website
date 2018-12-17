@@ -6,8 +6,11 @@
 
  body {
     font-family: 'Lora';
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 23, 15, 0.65))), url("../img/bg.jpg");
-    background: linear-gradient(rgba(47, 23, 15, 0.65)), url("../img/bg.jpg");
+    background: #3E5151;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -76,7 +79,9 @@
   }
   
   #mainNav {
-    background-color: rgba(47, 23, 15, 0.9);
+  background: #3E5151;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: 'Raleway';
   }
   
@@ -226,7 +231,10 @@
   }
   
   .footer {
-    background-color: rgba(47, 23, 15, 0.9);
+    background: #3E5151;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   }
   
   .text-primary {
@@ -243,13 +251,13 @@
   }
   
   .btn-primary {
-    background-color: #e6a756;
-    border-color: #e6a756;
+    background-color: rgb(165, 161, 154); 
+    border-color: #3E5151;
+    color: #3E5151;
   }
   
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    background-color: #df902a;
-    border-color: #df902a;
+    background-color: rgb(165, 161, 154); 
   }
   
   .font-weight-light {
@@ -261,7 +269,8 @@
     object-fit: cover;
 }
 #ilan.card-body{
-  background-color: #df902a;
+  background: #DECBA4; /* fallback for old browsers */
+  
 }
 .card{
   margin-left: 1%;

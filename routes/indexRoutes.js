@@ -41,14 +41,6 @@ router.get("/ilanver",(req,res)=>{
     res.render('ilanver');
 })
 
-router.get("/login",(req,res)=>{
-    res.render('login');
-})
-
-router.get("/signup",(req,res)=>{
-    res.render('signup');
-})
-
 router.get("/veterinerler",(req,res)=>{
     res.render('veterinerler');
 })

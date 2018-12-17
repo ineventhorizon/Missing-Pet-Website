@@ -1,21 +1,125 @@
 <% include ./partials/header %>
 <section class="page-section about-heading">
     <div class="container">
-      <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
-      <div class="about-heading-content">
-        <div class="row">
+
           <div class="col-xl-9 col-lg-10 mx-auto">
             <div class="bg-faded rounded p-5">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                <span class="section-heading-lower">About Our Cafe</span>
-              </h2>
-              <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-              <p class="mb-0">We guarantee that you will fall in <em>lust</em> with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
+
+                <form action="/signup" method="POST">
+                    <div class="form-group">
+                     
+                      <label for="emailAddress">Email</label>
+                      <input type="email" class="form-control" id="emailAddress"  placeholder="Email" name="username">
+                    </div>
+                    <div class="form-group">
+                      <label for="userPassword">Şifre</label>
+                      <input type="password" class="form-control" id="userPassword" placeholder="Şifre" name="password">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="formName">Ad</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ad" name="name">
+                      </div>
+                      <div class="form-group">
+                          <label for="formSurname">Soyad</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Soyad" name="surname">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="city" name="city" >
+                                <option value="ADANA">ADANA</option>
+                                <option value="ADİYAMAN">ADIYAMAN</option>
+                                <option value="AFYONKARAHİSAR">AFYONKARAHİSAR</option>
+                                <option value="AGRİ">AĞRI</option>
+                                <option value="AKSARAY">AKSARAY</option>
+                                <option value="AMASYA">AMASYA</option>
+                                <option value="ANKARA">ANKARA</option>
+                                <option value="ANTALYA">ANTALYA</option>
+                                <option value="ARDAHAN">ARDAHAN</option>
+                                <option value="ARTVİN">ARTVİN</option>
+                                <option value="AYDİN">AYDIN</option>
+                                <option value="BALİKESİR">BALIKESİR</option>
+                                <option value="BARTIN">BARTIN</option>
+                                <option value="BATMAN">BATMAN</option>
+                                <option value="BAYBURT">BAYBURT</option>
+                                <option value="BİLECİK">BİLECİK</option>
+                                <option value="BİNGOL">BİNGÖL</option>
+                                <option value="BİTLİS">BİTLİS</option>
+                                <option value="BOLU">BOLU</option>
+                                <option value="BURDUR">BURDUR</option>
+                                <option value="BURSA">BURSA</option>
+                                <option value="CANAKKALE">ÇANAKKALE</option>
+                                <option value="CANKİRİ">ÇANKIRI</option>
+                                <option value="CORUM">ÇORUM</option>
+                                <option value="DENİZLİ">DENİZLİ</option>
+                                <option value="DİYARBAKİR">DİYARBAKIR</option>
+                                <option value="DUZCE">DÜZCE</option>
+                                <option value="EDİRNE">EDİRNE</option>
+                                <option value="ELAZIG">ELAZIĞ</option>
+                                <option value="ERZİNCAN">ERZİNCAN</option>
+                                <option value="ERZURUM">ERZURUM</option>
+                                <option value="ESKİSEHİR">ESKİŞEHİR</option>
+                                <option value="GAZİANTEP">GAZİANTEP</option>
+                                <option value="GİRESUN">GİRESUN</option>
+                                <option value="GUMUSHANE">GÜMÜŞHANE</option>
+                                <option value="HAKKARİ">HAKKARİ</option>
+                                <option value="HATAY">HATAY</option>
+                                <option value="IGDIR">IĞDIR</option>
+                                <option value="İSPARTA">ISPARTA</option>
+                                <option value="İCEL">İÇEL</option>
+                                <option value="İSTANBUL">İSTANBUL</option>
+                                <option value="İZMİR">İZMİR</option>
+                                <option value="KAHRAMANMARAS">KAHRAMANMARAŞ</option>
+                                <option value="KARABUK">KARABÜK</option>
+                                <option value="KARAMAN">KARAMAN</option>
+                                <option value="KARS">KARS</option>
+                                <option value="KASTAMONU">KASTAMONU</option>
+                                <option value="KAYSERİ">KAYSERİ</option>
+                                <option value="KIRIKKALE">KIRIKKALE</option>
+                                <option value="KIRKLARELİ">KIRKLARELİ</option>
+                                <option value="KIRSEHİR">KIRŞEHİR</option>
+                                <option value="KİLİS">KİLİS</option>
+                                <option value="KOCAELİ">KOCAELİ</option>
+                                <option value="KONYA">KONYA</option>
+                                <option value="KUTAHYA">KÜTAHYA</option>
+                                <option value="MALATYA">MALATYA</option>
+                                <option value="MANİSA">MANİSA</option>
+                                <option value="MARDİN">MARDİN</option>
+                                <option value="MUGLA">MUĞLA</option>
+                                <option value="MUS">MUŞ</option>
+                                <option value="NEVSEHİR">NEVŞEHİR</option>
+                                <option value="NİGDE">NİĞDE</option>
+                                <option value="ORDU">ORDU</option>
+                                <option value="OSMANİYE">OSMANİYE</option>
+                                <option value="RİZE">RİZE</option>
+                                <option value="SAKARYA">SAKARYA</option>
+                                <option value="SAMSUN">SAMSUN</option>
+                                <option value="SİİRT">SİİRT</option>
+                                <option value="SİNOP">SİNOP</option>
+                                <option value="SİVAS">SİVAS</option>
+                                <option value="SANLIURFA">ŞANLIURFA</option>
+                                <option value="SIRNAK">ŞIRNAK</option>
+                                <option value="TEKİRDAG">TEKİRDAĞ</option>
+                                <option value="TOKAT">TOKAT</option>
+                                <option value="TRABZON">TRABZON</option>
+                                <option value="TUNCELİ">TUNCELİ</option>
+                                <option value="USAK">UŞAK</option>
+                                <option value="VAN">VAN</option>
+                                <option value="YALOVA">YALOVA</option>
+                                <option value="YOZGAT">YOZGAT</option>
+                                <option value="ZONGULDAK">ZONGULDAK</option>                                
+                            </select>
+                          </div>
+                        
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                  </form>
+
             </div>
           </div>
-        </div>
-      </div>
     </div>
   </section>
   <% include ./partials/footer %>

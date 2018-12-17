@@ -3,7 +3,7 @@
 <section class="page-section clearfix">
     
     <div class="container">
-        <div class="row">
+        <div class="row"  id="ilanlar">
 
         <% data.forEach((d)=>{ %>
             <div class="card" style="width: 18rem;">
@@ -12,7 +12,7 @@
                     <h3 class="card-title"><%= d.postTitle %></h5>
                     <h5 class="card-text"><%= d.postType %></h1>
                     <h5 class="card-text"><%= d.userCity %></h1>
-                    <button onclick="myFunction()" class="btn btn-warning">Telefon Numarası</button>
+                    <button onclick="myFunction()" class="btn btn-primary">Telefon Numarası</button>
                     <h6 class="card-text" id="cellPhoneNumber"></h1>
                     <p class="card-text"><%= d.postNote %></p>
                     </div>
