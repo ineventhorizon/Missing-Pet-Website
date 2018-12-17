@@ -38,7 +38,7 @@ passport.deserializeUser(User.deserializeUser());
 
 //Current user info within all routes
 app.use((req,res,next)=>{
-    console.log(req.user);
+    console.log("login olan kullanıcı bilgileri: "+req.user);
     res.locals.currentUser=req.user;
     next();
 })

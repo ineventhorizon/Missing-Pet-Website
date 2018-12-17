@@ -9,7 +9,8 @@ const userSchema=new mongoose.Schema({
     usersSurname: String,
     userCellPhone: String,
     userCity: String,
-    userType: String
+    userType: String,
+    userPosts:{type: Array, default:''}
 });
 
 userSchema.plugin(passportLocalMongoose);

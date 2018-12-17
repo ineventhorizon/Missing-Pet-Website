@@ -4,12 +4,14 @@ var postSchema=new mongoose.Schema({
     postTitle: {type: String, required:"Cannot be empty"},
     postNote: {type: String},
     postType: {type: String, required:"Cannot be empty"},
-    animalGenus: {type: String, required:"Cannot be empty"},
-    animalType: {type: String, required:"Cannot be empty"},
+    animalGenus: {type: String},
+    animalType: {type: String},
     postImage: {type: String, required:"Cannot be empty"},
-    animalAge: {type: Number, required:"Cannot be empty"},
-    dateRange: {type: Date, default: Date.now()},
-    lostDate: {type: Date, default: Date.now()},
+    animalAge: {type: Number},
+    dateRange: {type: String},
+    lostDate: {type: String,default:"12/12/2012"},
+    isConfirmed:{type: Boolean}
+
 });
 
 module.exports=mongoose.model("userPost",postSchema);

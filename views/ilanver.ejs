@@ -1,21 +1,75 @@
 <% include ./partials/header %>
 <section class="page-section about-heading">
     <div class="container">
-      <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
-      <div class="about-heading-content">
-        <div class="row">
-          <div class="col-xl-9 col-lg-10 mx-auto">
-            <div class="bg-faded rounded p-5">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                <span class="section-heading-lower">About Our Cafe</span>
-              </h2>
-              <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-              <p class="mb-0">We guarantee that you will fall in <em>lust</em> with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
-            </div>
+      <form action="/ilanver" method="POST">
+        <div class="form-group">
+
+          <div class="row justify-content-md-center">
+
+              <div class="col-md-12">
+                  <label for="postTitle">E-posta adresiniz:</label>
+                  <input class="form-control" id="postTitle"type="text" value="<%= currentUser.username %>" name="usrname" readonly>
+              </div>
+              <div class="col-md-4">
+                  <label for="postTitle">İlan Başlığı:</label>
+                  <input class="form-control" id="postTitle"type="text" placeholder="İlan Adı" name="title">
+              </div>
+              <div class="col-md-4">
+                  <label for="postType">İlanı ne için açmak istiyorsunuz?</label>
+                <select class="form-control" id="postType" name="type">
+                  <option>Kayıp İlanı</option>
+                  <option>Sahiplendirme İlanı</option>
+                  <option>Geçici Süre Bakım İlanı</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                  <label for="exampleFormControlFile1">Resim seçin. Sadece 1 adet fotoğraf yükleyiniz.</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+              </div>
+  
+              <div class="col-md-4">
+                <label for="uName">Adınız ve Soyadınız:</label>
+                <input class="form-control"  id="uName"type="text" value="<%= currentUser.usersName %> <%= currentUser.usersSurname %>"  name="namesurname" readonly>
+              </div>
+              <div class="col-md-4">
+                <label for="userPhone">Telefon Numaranız:</label>
+                <input class="form-control"  id="userPhone"type="text" value="<%= currentUser.usersName %> <%= currentUser.usersSurname %>" name="phonenumber"  readonly>  
+              </div>
+              <div class="col-md-4">
+                <label for="userCity">Şehir:</label>
+                <input class="form-control"  id="userCity"type="text" value="<%= currentUser.userCity %>"  name="city" readonly>
+              </div>
+              <div class="col-md-6">
+                  <label for="datepicker" >Kaybolma tarihi:</label>
+                  <input id="datepicker" name="date" readonly>
+              </div>
+              <div class="col-md-12">
+                <label for="animalNotes">Notlar</label>
+                <textarea cols="40" rows="5" class="form-control" id="animalNotes" placeholder="Notlarınız" name="notes"></textarea>
+              </div>
+              <div class="col-md-4">
+                  <label for="animalT">Hayvanınızın türü:</label>
+                  <input class="form-control" id="animalT"type="text" placeholder="Hayvanın Türü" name="typea">
+              </div>
+              <div class="col-md-4">
+                  <label for="animalG">Hayvanınızın cinsi:</label>
+                  <input class="form-control" id="animalG"type="text" placeholder="Hayvanın Cinsi" name="genus">
+              </div>
+              <div class="col-md-4">
+                  <label for="animalA">Hayvanınızın yaşı:</label>
+                  <input class="form-control" id="animalA"type="number" placeholder="Yaş" name="age">
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
           </div>
         </div>
-      </div>
+     </form>
     </div>
   </section>
+
+  <script>
+      $('#datepicker').datepicker({
+          uiLibrary: 'bootstrap4'
+      });
+  </script>
   <% include ./partials/footer %>
