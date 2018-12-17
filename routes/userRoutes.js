@@ -2,16 +2,19 @@ const express=require('express');
 const router=express.Router();
 const User=require("../models/userModel");
 const passport=require("passport");
-
+const app=express();
 
 
 router.get("/login",(req,res)=>{
     res.render('login');
 })
 
-router.post("/login",(req,res)=>{
+router.post("/login",passport.authenticate("local",
+    {
+        successRedirect:"/",
+        failureRedirect : "/login"
 
-})
+    }),(req,res)=>{});
 
 router.get("/signup",(req,res)=>{
     res.render('signup');
@@ -30,11 +33,21 @@ router.post("/signup",(req,res)=>{
         else{
             console.log(req.body);
             console.log(req.body.city);
-            var query={username:req.body.username};
-        
-
-            res.redirect("/");   //redirects if it is succesfull
+            var query={userCity: req.body.city,usersName: req.body.name
+                ,usersSurname:req.body.surname,userType:"User"};
+            console.log(newUser);
+            newUser.updateOne(query, { username: req.body.username }, function(err, res) {
+                // Updated at most one doc, `res.modifiedCount` contains the number
+                // of docs that MongoDB updated
+              });
+            res.redirect("/success"); //redirects if it is succesfull
         }
+
     })
+})
+
+router.get("/signout",(req,res)=>{
+    req.logOut();
+    res.redirect("/");
 })
 module.exports=router;

@@ -36,6 +36,13 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+//Current user info within all routes
+app.use((req,res,next)=>{
+    console.log(req.user);
+    res.locals.currentUser=req.user;
+    next();
+})
+
 
 //Routes using
 app.use(indexRoutes);
