@@ -1,16 +1,18 @@
 const mongoose=require('mongoose');
 
 var postSchema=new mongoose.Schema({
-    postTitle: {type: String, required:"Cannot be empty"},
+    postTitle: {type: String, default:"İlan Başlığı"},
     postNote: {type: String},
     postType: {type: String, required:"Cannot be empty"},
     animalGenus: {type: String},
     animalType: {type: String},
-    postImage: {type: String, required:"Cannot be empty"},
+    postImage: {type: String,default:"default.jpg"},
     animalAge: {type: Number},
     dateRange: {type: String},
     lostDate: {type: String,default:"12/12/2012"},
-    isConfirmed:{type: Boolean}
+    isConfirmed:{type: Boolean},
+    postOwnerPhone:{type:String},
+    postOwner:{type:String}
 
 });
 

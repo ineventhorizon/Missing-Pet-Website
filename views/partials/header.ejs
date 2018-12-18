@@ -69,11 +69,17 @@
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="/ilanver">İLAN VER</a>
             </li>
-            
+            <% if(currentUser.userType=='Admin') { %>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="/admin">ADMIN</a>
+            </li>
+            <% } %>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="/signout">ÇIKIŞ YAP</a>
             </li>
             <% } %>
+
+
             
 
           </ul>

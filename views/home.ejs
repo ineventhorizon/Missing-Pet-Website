@@ -5,22 +5,20 @@
     <div class="container">
         <div class="row justify-content-md-center"  id="ilanlar">
 
+        
         <%foundPosts.forEach( (d)=>{ %>
-            <%   if(d.isConfirmed){%>
 
-           
             <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="" alt="Card image cap">
+                    <img class="card-img-top" src="/images/<%= d.postImage %>" alt="Card image cap">
                     <div class="card-body" id="ilan">
                     <h3 class="card-title"><%= d.postTitle %></h5>
                     <h5 class="card-text"><%= d.postType %></h1>
                     <h5 class="card-text">test</h1>
-                    <button onclick="myFunction()" class="btn btn-primary">Telefon Numarası</button>
-                    <h6 class="card-text" id="cellPhoneNumber"></h1>
+                    <button onclick="myFunction(this.id)" id="<%= d.postOwnerPhone %>"class="btn btn-primary">Telefon Numarası</button>
+                    
                     <p class="card-text"><%= d.postNote %></p>
                     </div>
                 </div>
-                <%   }%>
         <%  }); %>
         </div>
 
@@ -29,8 +27,9 @@
 </section>
 
 <script>
-    function myFunction() {
-        document.getElementById("cellPhoneNumber").innerHTML = "";
+ 
+    function myFunction(clicked_id) {
+       confirm(clicked_id);
     }
 </script>
 

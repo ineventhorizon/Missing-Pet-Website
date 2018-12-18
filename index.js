@@ -3,7 +3,6 @@ const express=require("express");
 const bodyParser=require("body-parser");
 const passport=require("passport");
 const LocalStrategy=require("passport-local");
-const expressSession=require("express-session");
 const User=require("./models/userModel");
 
 
@@ -22,7 +21,9 @@ mongoose.connect('mongodb://yusufekrem:1471477@cluster0-shard-00-00-c8zez.gcp.mo
 });
 app.set('view engine','ejs');
 app.use(express.static('public'));
+app.use( bodyParser.json() ); 
 app.use(bodyParser.urlencoded({extended:true}));
+
 
 //Passport Config
 app.use(require("express-session")({
@@ -38,10 +39,11 @@ passport.deserializeUser(User.deserializeUser());
 
 //Current user info within all routes
 app.use((req,res,next)=>{
-    console.log("login olan kullanıcı bilgileri: "+req.user);
     res.locals.currentUser=req.user;
     next();
 })
+
+
 
 
 //Routes using
