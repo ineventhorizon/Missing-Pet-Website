@@ -4,6 +4,7 @@ const User=require("../models/userModel");
 const Post=require("../models/postModel");
 const passport=require("passport");
 const multer=require('multer');
+const path=require('path');
 
 
 //for rendering login page
@@ -54,13 +55,11 @@ router.get("/ilanver",(req,res)=>{
 
 var randomID=1;
 var Storage=multer.diskStorage({
-    destination:function(req,file,cb){
-        cb(null,"./public/images")
-    },
-    filename: function(req,file,cb){
-        randomID=Math.floor((Math.random() * 100) + 1);
-        cb(null,randomID+"-"+file.originalname);
-    }
+    dest : path.join(__dirname,'../public/images'),
+    filename: function(req,file,cb)
+    { randomID=Math.floor((Math.random() * 100) + 1); 
+    cb(null,randomID+"-"+file.originalname);}
+
 });
 
 
