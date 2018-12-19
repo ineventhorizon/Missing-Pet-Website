@@ -44,15 +44,13 @@ app.use((req,res,next)=>{
 })
 
 
-
-
 //Routes using
 app.use(indexRoutes);
 app.use(userRoutes);
 
 
-const server=app.listen(3000,(err)=>{
+const server=app.listen(process.env.PORT||5000,(err)=>{
     if(err) console.log(err);
-    console.log("App started. Port number:  %d ",server.address().port);
+
 });
 

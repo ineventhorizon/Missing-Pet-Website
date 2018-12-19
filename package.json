@@ -4,7 +4,7 @@
   "description": "first version of the website for finding missing pets",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "index.js"
   },
   "author": "Yusuf Ekrem Keçilioğlu",
   "license": "ISC",
