@@ -72,20 +72,56 @@ router.post("/ilanver",upload.single('image'),(req,res)=>{
      //initialize currentUser to get user's info from the form
     //gets required infos from forms
     console.log(req.file.originalname);
-    var newPost=new Post({
-        postTitle:req.body.title,
-        postNote:req.body.notes,
-        postType:req.body.type,
-        animalGenus:req.body.genus,
-        animalType: req.body.typea,
-        animalAge: req.body.age,
-        postImage:+randomID+"-"+req.file.originalname,
-        lostDate:req.body.date,
-        postOwnerPhone:req.body.phonenumber,
-        postOwner:req.body.namesurname,
-        isConfirmed: 0
-    });
+    console.log(req.body.postType);
 
+
+    if(req.body.type=="Kayıp İlanı"){
+        var newPost=new Post({
+            postTitle:req.body.title,
+            postNote:req.body.notes,
+            postType:req.body.type,
+            animalGenus:req.body.genus,
+            animalType: req.body.typea,
+            animalAge: req.body.age,
+            postImage:+randomID+"-"+req.file.originalname,
+            postOwnerPhone:req.body.phonenumber,
+            postOwner:req.body.namesurname,
+            postOwnnerCity:req.body.city,
+            lostDate:req.body.date,
+            isConfirmed: 0
+        });
+    } else if(req.body.type=="Sahiplendirme İlanı"){
+        var newPost=new Post({
+            postTitle:req.body.title,
+            postNote:req.body.notes,
+            postType:req.body.type,
+            animalGenus:req.body.genus,
+            animalType: req.body.typea,
+            animalAge: req.body.age,
+            postImage:+randomID+"-"+req.file.originalname,
+            postOwnerPhone:req.body.phonenumber,
+            postOwner:req.body.namesurname,
+            postOwnnerCity:req.body.city,
+            isConfirmed: 0
+        });
+    } else {
+        var newPost=new Post({
+            postTitle:req.body.title,
+            postNote:req.body.notes,
+            postType:req.body.type,
+            animalGenus:req.body.genus,
+            animalType: req.body.typea,
+            animalAge: req.body.age,
+            postImage:+randomID+"-"+req.file.originalname,
+            postOwnerPhone:req.body.phonenumber,
+            postOwner:req.body.namesurname,
+            postOwnnerCity:req.body.city,
+            dateRange:req.body.daterange1+"-"+req.body.daterange2,
+            isConfirmed: 0
+        });
+    }
+
+    console.log(newPost);
     //saves post datas to database
     newPost.save(function(err,newPost){
         if(err){

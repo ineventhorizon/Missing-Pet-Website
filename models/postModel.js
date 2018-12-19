@@ -12,7 +12,8 @@ var postSchema=new mongoose.Schema({
     lostDate: {type: String,default:"12/12/2012"},
     isConfirmed:{type: Boolean},
     postOwnerPhone:{type:String},
-    postOwner:{type:String}
+    postOwner:{type:String},
+    postOwnerCity:{type: String}
 
 });
 
