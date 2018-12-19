@@ -77,6 +77,9 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
   
   .bg-faded {
     background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 5px 10px 15px 5px rgba(0,0,0,0.12),
+  5px 8px 10px 5px rgba(0,0,0,0.08);
+  border-radius:5% 5% 5% 5%;
 	font-family: 'Raleway';
   }
   
