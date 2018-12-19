@@ -48,7 +48,7 @@
               <li class="nav-item px-lg-4">
                   <a class="nav-link text-uppercase text-expanded" href="/#topScreen">ANASAYFA
                   </a>
-                </li>
+              </li>
 
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="/#ilanlar">İLANLAR
@@ -73,7 +73,10 @@
             </li>
             <% if(currentUser.userType=='Admin') { %>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="/admin">ADMIN</a>
+              <a class="nav-link text-uppercase text-expanded" href="/admin/ilanlar">İLAN ONAY</a>
+            </li>
+            <li class="nav-item px-lg-4">
+                <a class="nav-link text-uppercase text-expanded" href="/admin/vet">VETERİNER ONAY</a>
             </li>
             <% } %>
             <li class="nav-item px-lg-4">
