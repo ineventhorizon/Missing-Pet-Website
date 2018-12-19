@@ -31,6 +31,7 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
   
   .text-faded {
     color: rgba(255, 255, 255, 0.3);
+	font-family: 'Raleway';
   }
   
   .site-heading {
@@ -76,6 +77,10 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
   
   .bg-faded {
     background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 5px 10px 15px 5px rgba(0,0,0,0.12),
+  5px 8px 10px 5px rgba(0,0,0,0.08);
+  border-radius:5% 5% 5% 5%;
+	font-family: 'Raleway';
   }
   
   #mainNav {
@@ -254,10 +259,14 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
     background-color: rgb(165, 161, 154); 
     border-color: #3E5151;
     color: #3E5151;
+ 	border-style: none;
+    font-family: 'Raleway';
   }
   
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
     background-color: rgb(165, 161, 154); 
+ -webkit-transform: scale(1.1);
+    background: #2d3031;
   }
   
   .font-weight-light {
@@ -267,14 +276,21 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
     width: 100%;
     height: 15vw;
     object-fit: cover;
+ border-radius:2% 2% 0% 0%;
 }
 #ilan.card-body{
   background: #DECBA4; /* fallback for old browsers */
+border-radius:0% 0% 2% 2%;
+  box-shadow: #2d3031
   
 }
 .card{
   margin-left: 1%;
   margin-right: 1%;
+	box-shadow: 5px 10px 15px 5px rgba(0,0,0,0.12),
+  5px 8px 10px 5px rgba(0,0,0,0.08);
+  border-radius:5% 5% 5% 5%;
+  border-style: none;
 }
 
 
