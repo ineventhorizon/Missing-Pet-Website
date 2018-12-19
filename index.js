@@ -44,8 +44,6 @@ app.use((req,res,next)=>{
 })
 
 
-
-
 //Routes using
 app.use(indexRoutes);
 app.use(userRoutes);
