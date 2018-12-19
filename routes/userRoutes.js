@@ -55,7 +55,7 @@ router.get("/ilanver",(req,res)=>{
 
 var randomID=1;
 var Storage=multer.diskStorage({
-    dest : path.join(__dirname,'../public/images'),
+    destination : path.join(__dirname,'../public/images'),
     filename: function(req,file,cb)
     { randomID=Math.floor((Math.random() * 100) + 1); 
     cb(null,randomID+"-"+file.originalname);}
