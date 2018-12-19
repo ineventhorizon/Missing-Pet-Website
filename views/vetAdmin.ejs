@@ -1,0 +1,37 @@
+<% include ./partials/admin_header %>
+        
+    <div class="container">
+      <div class="row justify-content-md-center"  id="ilanlar">
+    
+
+    <% if(currentUser.userType=='Admin') { %>
+
+
+        <% foundVets.forEach( (d)=>{ %>
+            <div class="card" style="width: 18rem;">
+              <img class="card" src="">
+              <div class="card-body">
+                    <h5 class="card-title"> <%= d.vetName %> - <%= d.vetCity %> </h5>
+                    <h5 class="card-title"> <%= d.vetOwner %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"> <%= d.vetPhone %></h6>
+                    <p class="card-text"><%= d.vetAddress %></p>
+                  </div>
+              <form action="/vetconfirm"method="POST" >
+                <input class="form-control"  id="userCity"type="text" value="<%= d._id %>"  name="postid" readonly>
+                <button type="submit" name="butt" value="<%= d._id %>"class="btn btn-primary">Onayla</button>
+              </form>
+                  
+            </div>
+          <%  }); %>
+
+    <% }  else {%>
+
+    <h1>403 FORBIDDEN</h1>
+
+    <% } %>
+
+    </div>
+
+    </div>
+
+<% include ./partials/footer %>

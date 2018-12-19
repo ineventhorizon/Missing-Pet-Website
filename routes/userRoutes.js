@@ -2,6 +2,7 @@ const express=require('express');
 const router=express.Router();
 const User=require("../models/userModel");
 const Post=require("../models/postModel");
+const Vet=require("../models/vetModel")
 const passport=require("passport");
 const multer=require('multer');
 const path=require('path');
@@ -46,28 +47,34 @@ router.post("/signup",(req,res)=>{
     })
 })
 
+//when user  wants to submit a new post 
+//this will render ilanver.ejs
 router.get("/ilanver",(req,res)=>{
     res.locals.currentUser=req.user; //initialize currentUser to get user's info from the form
     res.render("ilanver");
-    
 })
 
 
+
+
+//this is for naming uploaded images
+//it will generate a random number everytime user submits a new post
+// i don't know if it works all the time
 var randomID=1;
+
+//initializing multer for image upload
 var Storage=multer.diskStorage({
-    destination : path.join(__dirname,'../public/images'),
+    destination : path.join(__dirname,'../public/images'), //this sets the uploaded image's path to /public/images
     filename: function(req,file,cb)
-    { randomID=Math.floor((Math.random() * 100) + 1); 
-    cb(null,randomID+"-"+file.originalname);}
+    { randomID=Math.floor((Math.random() * 100) + 1); //this is for generating number everytime user submits
+    cb(null,randomID+"-"+file.originalname);} //naming operation of uploaded file
 
 });
 
-
-
+//to get the uploaded image
 var upload=multer({storage:Storage});
 
-
-
+//when user submits post 
 router.post("/ilanver",upload.single('image'),(req,res)=>{
      //initialize currentUser to get user's info from the form
     //gets required infos from forms
@@ -143,8 +150,9 @@ router.get("/signout",(req,res)=>{
 })
 
 
-//admin page
-router.get("/admin",(req,res)=>{
+//admin post confirmation page,if usertype=admin enter /admin/ilanlar renders 
+//admin.ejs with unconfirmed posts
+router.get("/admin/ilanlar",(req,res)=>{
     //finds unconfirmed posts
     Post.find({isConfirmed:false},(err,foundPosts)=>{
         if(err){
@@ -159,14 +167,63 @@ router.get("/admin",(req,res)=>{
     })
 })
 
-//
+//gets pressed buttons id which is id of the post and makes its 
+// isConfirmed to true 
 router.post("/admin",(req,res,next)=>{
     var post_id=req.body.butt;
     Post.findByIdAndUpdate(post_id,{isConfirmed:1},(err)=>{
         if(err){
             console.log("----------SOMETHING WENT WRONG-------");
-        } else res.redirect('admin')
+        } else res.redirect('admin/ilanlar')
     })
-    
 })
+
+//whenever admin enters /admin/vet this page will render
+router.get("/admin/vet",(req,res)=>{
+    //finds unconfirmed posts
+    Vet.find({isConfirmed:false},(err,foundVets)=>{
+        if(err){
+            console.log("-----------ERROR----------");
+            console.log(err);
+        } else {
+            res.render("vetAdmin",{foundVets:foundVets});
+        }
+    })
+})
+
+//gets pressed button's id which is id of the vet and makes its 
+// isConfirmed to true 
+router.post("/vetconfirm",(req,res)=>{
+    var vet_id=req.body.butt;
+    Vet.findByIdAndUpdate(vet_id,{isConfirmed:1},(err)=>{
+        if(err){
+            console.log("----------SOMETHING WENT WRONG-------");
+        } else res.redirect('admin/vet');
+    })
+})
+
+//whenever a vet enters their info
+//vet will submit their info to be approved by admins
+router.post("/veterinerler",(req,res)=>{
+    var newVet=new Vet({
+        vetName:req.body.name,
+        vetOwner:req.body.owner,
+        vetPhone:req.body.vetphone,
+        vetAddress:req.body.address,
+        vetCity:req.body.city,
+        isConfirmed:0
+    })
+    console.log("eklenen veteriner----------------------------------");
+    console.log(newVet);
+
+    newVet.save(function(err,newPost){
+        if(err){
+            console.log(err);
+            res.send(err);
+        } else {
+            res.redirect("/")
+        }
+    })
+})
+
 module.exports=router;

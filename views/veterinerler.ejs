@@ -1,21 +1,53 @@
 <% include ./partials/header %>
 <section class="page-section about-heading">
     <div class="container">
-      <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
-      <div class="about-heading-content">
-        <div class="row">
-          <div class="col-xl-9 col-lg-10 mx-auto">
-            <div class="bg-faded rounded p-5">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                <span class="section-heading-lower">About Our Cafe</span>
-              </h2>
-              <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-              <p class="mb-0">We guarantee that you will fall in <em>lust</em> with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
+      <div class="row">
+
+          <% foundVets.forEach( (d)=>{ %>
+            <div class="card" style="width: 18rem;">
+              <img class="card" src="">
+              <div class="card-body">
+                    <h5 class="card-title"> <%= d.vetName %> - <%= d.vetCity %> </h5>
+                    <h5 class="card-title"> <%= d.vetOwner %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"> <%= d.vetPhone %></h6>
+                    <p class="card-text"><%= d.vetAddress %></p>
+                  </div>   
+            </div>
+          <%  }); %>
+      </div>
+
+
+      <h1>Kliniğinizin sitemizde görünmesini istiyorsanız :</h1>
+      <form action="/veterinerler" method="POST">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Kliniğinizin adı:</label>
+              <input type="text" class="form-control" id="inputEmail4" placeholder="Klinik Adı" name="name"required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Klinik sahibi/hekim adı: </label>
+              <input type="text" class="form-control" id="inputPassword4" placeholder="İsim Soyisim" name="owner"required>
             </div>
           </div>
-        </div>
-      </div>
+          <div class="form-group">
+            <label for="inputAddress">Kliniğinizin adresi: </label>
+            <input type="text" class="form-control" id="inputAddress" placeholder=".. Mahallesi .. Sokak ..." name="address" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">Kliniğinizin bulunduğu şehir:</label>
+              <input type="text" class="form-control" id="inputCity" placeholder="Şehir" name="city" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6"" >
+              <label for="formPhone">Telefon Numarası</label>
+              <input type="text" class="form-control" id="phone-number"  placeholder="0(5xx) xxx xxxx" name="vetphone" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Onay için yolla</button>
+        </form>
+
     </div>
   </section>
   <% include ./partials/footer %>
