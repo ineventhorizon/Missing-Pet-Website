@@ -11,11 +11,18 @@
             <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="../images/<%= d.postImage %>""  alt="Card image cap">
                     <div class="card-body" id="ilan">
-                    <h3 class="card-title"><%= d.postTitle %></h5>
-                    <h5 class="card-text"><%= d.postType %></h1>
-                    <h5 class="card-text">test</h1>
+                    <h3 class="card-title"><%= d.postTitle %></h3>
+                    <h5 class="card-text"><%= d.postType %></h5>
+                    <h5 class="card-text"><%= d.postOwnerCity %></h5>
+                    <h5 class="card-text"><%= d.animalGenus %> - <%= d.animalType %> </h5>
+            <%     if(d.postType=='Kayıp İlanı') { %>
+                    <h5 class="card-text">Kaybolduğu Tarih: <%= d.lostDate %></h5>
+            <% } %>
+            <%     if(d.postType=='Geçici Süre Bakım İlanı') { %>
+                <h5 class="card-text">Bakılacak aralık: <%= d.dateRange %></h5>
+            <% } %>
+
                     <button onclick="myFunction(this.id)" id="<%= d.postOwnerPhone %>"class="btn btn-primary">Telefon Numarası</button>
-                    
                     <p class="card-text"><%= d.postNote %></p>
                     </div>
                 </div>
@@ -27,10 +34,12 @@
 </section>
 
 <script>
- 
+    
+    
     function myFunction(clicked_id) {
        confirm(clicked_id);
     }
+
 </script>
 
 

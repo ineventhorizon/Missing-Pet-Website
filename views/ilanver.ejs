@@ -12,20 +12,20 @@
               </div>
               <div class="col-md-4">
                   <label for="postTitle">İlan Başlığı:</label>
-                  <input class="form-control" id="postTitle"type="text" placeholder="İlan Adı" name="title">
+                  <input class="form-control" id="postTitle"type="text" placeholder="İlan Adı" name="title" required>
               </div>
               <div class="col-md-4">
                   <label for="postType">İlanı ne için açmak istiyorsunuz?</label>
-                <select class="form-control" id="postType" name="type">
-                  <option>Kayıp İlanı</option>
-                  <option>Sahiplendirme İlanı</option>
-                  <option>Geçici Süre Bakım İlanı</option>
+                <select class="form-control" onchange="yesnoCheck(this)" id="postType" name="type">
+                  <option value="Kayıp İlanı">Kayıp İlanı</option>
+                  <option value="Sahiplendirme İlanı">Sahiplendirme İlanı</option>
+                  <option value="Geçici Süre Bakım İlanı">Geçici Süre Bakım İlanı</option>
                 </select>
               </div>
 
               <div class="col-md-4">
                   <label for="exampleFormControlFile1">Resim seçin. Sadece 1 adet fotoğraf yükleyiniz.</label>
-                  <input type="file" class="form-control-file" id="fileUp" name="image">
+                  <input type="file" class="form-control-file" id="fileUp" name="image" required>
               </div>
   
               <div class="col-md-4">
@@ -40,10 +40,24 @@
                 <label for="userCity">Şehir:</label>
                 <input class="form-control"  id="userCity"type="text" value="<%= currentUser.userCity %>"  name="city" readonly>
               </div>
+
+                <div class="col-md-6" id="daterange"  style="display: none;">
+                    
+                    <label for="daterange1" >Bakım başlangıç tarihi:</label>
+                    <input id="daterange1" name="daterange1" readonly>
+            
+                    <label for="daterange2" >Geri teslim alma tarihi:</label>
+                    <input id="daterange2"  name="daterange2" readonly>
+                        
+                </div>
+
               <div class="col-md-6">
-                  <label for="datepicker" >Kaybolma tarihi:</label>
-                  <input id="datepicker" name="date" readonly>
+                <div id="datecheck" style="display: block;"> 
+                    <label for="datepicker" >Kaybolma tarihi:</label>
+                    <input id="datepicker" name="date" readonly>
+                </div>
               </div>
+
               <div class="col-md-12">
                 <label for="animalNotes">Notlar</label>
                 <textarea cols="40" rows="5" class="form-control" id="animalNotes" placeholder="Notlarınız" name="notes"></textarea>
@@ -54,7 +68,12 @@
               </div>
               <div class="col-md-4">
                   <label for="animalG">Hayvanınızın cinsi:</label>
-                  <input class="form-control" id="animalG"type="text" placeholder="Hayvanın Cinsi" name="genus">
+                  <select class="form-control"  id="animalG" name="genus">
+                        <option>Kedi</option>
+                        <option>Köpek</option>
+                        <option>Kanatlı hayvan</option>
+                        <option>Diğer</option>
+                </select>
               </div>
               <div class="col-md-4">
                   <label for="animalA">Hayvanınızın yaşı:</label>
@@ -69,8 +88,29 @@
   </section>
 
   <script>
+      
       $('#datepicker').datepicker({
           uiLibrary: 'bootstrap4'
       });
+      $('#daterange1').datepicker({
+          uiLibrary: 'bootstrap4'
+      });
+      $('#daterange2').datepicker({
+          uiLibrary: 'bootstrap4'
+      });
+      function yesnoCheck(){
+        if(document.getElementById("postType").value=="Kayıp İlanı"){
+            document.getElementById("datecheck").style.display="block";
+            document.getElementById("daterange").style.display="none";
+        } 
+        else if(document.getElementById("postType").value=="Sahiplendirme İlanı"){
+            document.getElementById("datecheck").style.display="none";
+            document.getElementById("daterange").style.display="none";
+        } 
+        else{
+            document.getElementById("datecheck").style.display="none";
+            document.getElementById("daterange").style.display="block";
+        }
+      }
   </script>
   <% include ./partials/footer %>

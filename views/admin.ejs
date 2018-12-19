@@ -14,8 +14,16 @@
         <div class="card-body" id="ilan">
         <h3 class="card-title"><%= d.postTitle %></h5>
         <h5 class="card-text"><%= d.postType %></h1>
-        <h5 class="card-text">Şehir</h1>
-        <h5 class="card-text" id="cellPhoneNumber">Telefon numarası</h1>
+        <h5 class="card-text"><%= d.postOwnerCity %></h1>
+        <h5 class="card-text"><%= d.animalGenus %> - <%= d.animalType %> </h1>
+        <h5 class="card-text" id="cellPhoneNumber"><%= d.postOwnerPhone %></h1>
+        <h5 class="card-text"><%= d.animalGenus %> - <%= d.animalType %> </h5>
+        <%     if(d.postType=='Kayıp İlanı') { %>
+        <h5 class="card-text">Kaybolduğu Tarih: <%= d.lostDate %></h5>
+        <% } %>
+        <%     if(d.postType=='Geçici Süre Bakım İlanı') { %>
+        <h5 class="card-text">Bakılacak aralık: <%= d.dateRange %></h5>
+        <% } %>
         <p class="card-text"><%= d.postNote %></p>
         </div>
     <form action="/admin"method="POST" >
