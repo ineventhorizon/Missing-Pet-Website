@@ -1,20 +1,20 @@
 <% include ./partials/header %>
 <section class="page-section about-heading">
     <div class="container">
+    <div class="col-xl-9 col-lg-10 mx-auto">
+    <div class="bg-faded rounded p-5">
       <form action="/ilanver" enctype="multipart/form-data" method="POST" >
-        <div class="form-group">
-
-          <div class="row justify-content-md-center">
-
-              <div class="col-md-12">
+        <div class="form-row">
+              <div class="form-group col-md-12">
                   <label for="postTitle">E-posta adresiniz:</label>
                   <input class="form-control" id="postTitle"type="text" value="<%= currentUser.username %>" name="usrname" readonly>
               </div>
-              <div class="col-md-4">
-                  <label for="postTitle">İlan Başlığı:</label>
+              <div class="form-group col-md-4">
+                  <label class=labelrow for="postTitle">İlan Başlığı:</label>
+                 
                   <input class="form-control" id="postTitle"type="text" placeholder="İlan Adı" name="title" required>
               </div>
-              <div class="col-md-4">
+              <div class="form-group col-md-4">
                   <label for="postType">İlanı ne için açmak istiyorsunuz?</label>
                 <select class="form-control" onchange="yesnoCheck(this)" id="postType" name="type">
                   <option value="Kayıp İlanı">Kayıp İlanı</option>
@@ -23,25 +23,25 @@
                 </select>
               </div>
 
-              <div class="col-md-4">
+              <div class="form-group col-md-4">
                   <label for="exampleFormControlFile1">Resim seçin. Sadece 1 adet fotoğraf yükleyiniz.</label>
                   <input type="file" class="form-control-file" id="fileUp" name="image" required>
               </div>
   
-              <div class="col-md-4">
+              <div class="form-group col-md-4">
                 <label for="uName">Adınız ve Soyadınız:</label>
                 <input class="form-control"  id="uName"type="text" value="<%= currentUser.usersName %> <%= currentUser.usersSurname %>"  name="namesurname" readonly>
               </div>
-              <div class="col-md-4">
+              <div class="form-group col-md-4">
                 <label for="userPhone">Telefon Numaranız:</label>
                 <input class="form-control"  id="userPhone"type="text" value="<%= currentUser.userCellPhone %>" name="phonenumber"  readonly>  
               </div>
-              <div class="col-md-4">
+              <div class="form-group col-md-4">
                 <label for="userCity">Şehir:</label>
                 <input class="form-control"  id="userCity"type="text" value="<%= currentUser.userCity %>"  name="city" readonly>
               </div>
 
-                <div class="col-md-6" id="daterange"  style="display: none;">
+                <div class="form-group col-md-6" id="daterange"  style="display: none;">
                     
                     <label for="daterange1" >Bakım başlangıç tarihi:</label>
                     <input id="daterange1" name="daterange1" readonly>
@@ -51,22 +51,22 @@
                         
                 </div>
 
-              <div class="col-md-6">
+              <div class="form-group col-md-6">
                 <div id="datecheck" style="display: block;"> 
                     <label for="datepicker" >Kaybolma tarihi:</label>
                     <input id="datepicker" name="date" readonly>
                 </div>
               </div>
 
-              <div class="col-md-12">
+              <div class="form-group col-md-12">
                 <label for="animalNotes">Notlar</label>
                 <textarea cols="40" rows="5" class="form-control" id="animalNotes" placeholder="Notlarınız" name="notes"></textarea>
               </div>
-              <div class="col-md-4">
+              <div class="form-group col-md-4">
                   <label for="animalT">Hayvanınızın türü:</label>
                   <input class="form-control" id="animalT"type="text" placeholder="Hayvanın Türü" name="typea">
               </div>
-              <div class="col-md-4">
+              <div class="form-group col-md-4">
                   <label for="animalG">Hayvanınızın cinsi:</label>
                   <select class="form-control"  id="animalG" name="genus">
                         <option>Kedi</option>
@@ -75,15 +75,17 @@
                         <option>Diğer</option>
                 </select>
               </div>
-              <div class="col-md-4">
+              <div class="form-group col-md-4">
                   <label for="animalA">Hayvanınızın yaşı:</label>
                   <input class="form-control" id="animalA"type="number" placeholder="Yaş" name="age">
               </div>
 
               <button type="submit"  value="upload" class="btn btn-primary">Onay İsteği</button>
-          </div>
+          
         </div>
      </form>
+    </div>
+    </div>
     </div>
   </section>
 

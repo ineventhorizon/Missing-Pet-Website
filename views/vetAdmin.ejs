@@ -1,15 +1,13 @@
 <% include ./partials/admin_header %>
         
     <div class="container">
-      <div class="row justify-content-md-center"  id="ilanlar">
-    
-
+    <div class="col-xl-9 col-lg-10 mx-auto">
+        <div class="bg-faded rounded p-5">
+          <div class="row justify-content-md-center"  id="ilanlar">
+          
     <% if(currentUser.userType=='Admin') { %>
-
-
         <% foundVets.forEach( (d)=>{ %>
             <div class="card" style="width: 18rem;">
-              <img class="card" src="">
               <div class="card-body">
                     <h5 class="card-title"> <%= d.vetName %> - <%= d.vetCity %> </h5>
                     <h5 class="card-title"> <%= d.vetOwner %></h5>
@@ -30,8 +28,10 @@
 
     <% } %>
 
-    </div>
+          </div>
+
+         </div>
+      </div>
 
     </div>
-
 <% include ./partials/footer %>
