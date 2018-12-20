@@ -3,10 +3,10 @@
     <div class="container">
     <div class="col-xl-9 col-lg-10 mx-auto">
            
-            <div class="bg-faded rounded p-5">
+            <div class="bg-faded rounded p-5" id="forms"> 
             <div class="row justify-content-md-center">
           <% foundVets.forEach( (d)=>{ %>
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem;" id="vetcard">
               
               <div class="card-body">
                     <h5 class="card-title"> <%= d.vetName %> - <%= d.vetCity %> </h5>

@@ -3,14 +3,11 @@
  * Copyright 2013-2018 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/master/LICENSE)
  */
-
+ 
+ 
  body {
     font-family: 'Lora';
-    background: #3E5151;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
+    background: #544023;/* fallback for old browsers */
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -37,6 +34,7 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
     text-transform: uppercase;
     line-height: 1;
     font-family: 'Raleway';
+    color: #9B8462;
   }
   
   .site-heading .site-heading-upper {
@@ -71,23 +69,21 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
     font-weight: 100;
   }
   .bg-faded {
-    background-color: rgba(255, 255, 255, 0.85);/* buradan arkaplanı değiştirebilrisiniz*/
+    background-color: #61513A;
     box-shadow: 5px 10px 15px 5px rgba(0,0,0,0.12),
   5px 8px 10px 5px rgba(0,0,0,0.08);
   border-radius:5% 5% 5% 5%;
   font-family: 'Raleway';
   }
   #mainNav {
-  background: #3E5151;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #61513A;  /* fallback for old browsers */
     font-family: 'Raleway';
   }
   #mainNav .navbar-brand {
     color: #e6a756;
   }
   #mainNav .navbar-nav .nav-item .nav-link {
-    color: rgba(255, 255, 255, 0.7);
+    color: #9B8462;
     font-weight: 800;
   }
   
@@ -222,9 +218,7 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
     font-size: 1.2rem;
   }
   .footer {
-    background: #3E5151;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #61513A;  /* fallback for old browsers */
   }
   .text-primary {
     color: #e6a756 !important;
@@ -237,9 +231,9 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
     box-shadow: 0px 3px 3px 0px rgba(33, 37, 41, 0.1);
   }
   .btn-primary {
-    background-color: rgb(165, 161, 154); 
+    background-color:#61513A;
     border-color: #3E5151; 
-    color: #3E5151;
+    color:#000000;
  	  border-style: none;
     font-family: 'Raleway';
   }
@@ -266,7 +260,7 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
 #ilan.card-body{
   width: 100%;
   height: auto;
-  background: #DECBA4; /* fallback for old browsers */
+  background: #9B8462; /* fallback for old browsers */
   border-radius:0% 0% 2% 2%;
   justify-content: center;
 }
@@ -312,4 +306,23 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
       height: 19vw;
       
   }
+}
+
+#forms{
+  background: #9B8462;
+}
+
+#vetcard{
+  background: #61513A;
+}
+
+#confirmform{
+  background: #9B8462;
+}
+#pTitle{
+  font-family: 'Cantarell', sans-serif;
+  color: #281904;
+}
+#pType{
+  color:#61513A;
 }

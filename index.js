@@ -12,8 +12,7 @@ const app=express();
 const indexRoutes=require("./routes/indexRoutes");
 const userRoutes=require("./routes/userRoutes");
 
-
-mongoose.connect('mongodb://kayipdostlar:tc3gmhbYLp4Npjd@cluster0-shard-00-00-c8zez.gcp.mongodb.net:27017,cluster0-shard-00-01-c8zez.gcp.mongodb.net:27017,cluster0-shard-00-02-c8zez.gcp.mongodb.net:27017/SiteDB?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true',{
+mongoose.connect('mongodb://kayip-dostlar:UzWIaJAGxWtf6EVY@cluster0-shard-00-00-c8zez.gcp.mongodb.net:27017,cluster0-shard-00-01-c8zez.gcp.mongodb.net:27017,cluster0-shard-00-02-c8zez.gcp.mongodb.net:27017/SiteDB?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true',{
     useCreateIndex: true,
     useNewUrlParser:true
     

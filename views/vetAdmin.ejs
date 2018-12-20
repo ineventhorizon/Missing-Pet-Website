@@ -14,7 +14,7 @@
                     <h6 class="card-subtitle mb-2 text-muted"> <%= d.vetPhone %></h6>
                     <p class="card-text"><%= d.vetAddress %></p>
                   </div>
-              <form action="/vetconfirm"method="POST" >
+              <form action="/vetconfirm"method="POST" id="confirmform">
                 <input class="form-control"  id="userCity"type="text" value="<%= d._id %>"  name="postid" readonly>
                 <button type="submit" name="butt" value="<%= d._id %>"class="btn btn-primary">Onayla</button>
               </form>

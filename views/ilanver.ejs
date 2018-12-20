@@ -2,7 +2,7 @@
 <section class="page-section about-heading">
     <div class="container">
     <div class="col-xl-9 col-lg-10 mx-auto">
-    <div class="bg-faded rounded p-5">
+    <div class="bg-faded rounded p-5" id="forms">
       <form action="/ilanver" enctype="multipart/form-data" method="POST" >
         <div class="form-row">
               <div class="form-group col-md-12">
@@ -38,7 +38,7 @@
               </div>
               <div class="form-group col-md-4">
                 <label for="userCity">Şehir:</label>
-                <input class="form-control"  id="userCity"type="text" value="<%= currentUser.userCity %>"  name="city" readonly>
+                <input class="form-control"  id="userCity"type="text" value="<%= currentUser.userCity %>"  name="usercity" readonly>
               </div>
 
                 <div class="form-group col-md-6" id="daterange"  style="display: none;">
