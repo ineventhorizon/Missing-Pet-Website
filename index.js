@@ -14,7 +14,7 @@ const userRoutes=require("./routes/userRoutes");
 
 
 //App.Config
-mongoose.connect('mongodb://kayipdostlar:tc3gmhbYLp4Npjd@cluster0-shard-00-00-c8zez.gcp.mongodb.net:27017,cluster0-shard-00-01-c8zez.gcp.mongodb.net:27017,cluster0-shard-00-02-c8zez.gcp.mongodb.net:27017/SiteDB?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true',{
+mongoose.connect('',{
     useCreateIndex: true,
     useNewUrlParser:true
     
