@@ -93,7 +93,7 @@ router.post("/ilanver",upload.single('image'),(req,res)=>{
             postImage:+randomID+"-"+req.file.originalname,
             postOwnerPhone:req.body.phonenumber,
             postOwner:req.body.namesurname,
-            postOwnnerCity:req.body.city,
+            postOwnerCity:req.body.usercity,
             lostDate:req.body.date,
             isConfirmed: 0
         });
@@ -108,7 +108,7 @@ router.post("/ilanver",upload.single('image'),(req,res)=>{
             postImage:+randomID+"-"+req.file.originalname,
             postOwnerPhone:req.body.phonenumber,
             postOwner:req.body.namesurname,
-            postOwnnerCity:req.body.city,
+            postOwnerCity:req.body.usercity,
             isConfirmed: 0
         });
     } else {
@@ -122,7 +122,7 @@ router.post("/ilanver",upload.single('image'),(req,res)=>{
             postImage:+randomID+"-"+req.file.originalname,
             postOwnerPhone:req.body.phonenumber,
             postOwner:req.body.namesurname,
-            postOwnnerCity:req.body.city,
+            postOwnerCity:req.body.usercity,
             dateRange:req.body.daterange1+"-"+req.body.daterange2,
             isConfirmed: 0
         });

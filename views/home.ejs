@@ -2,15 +2,15 @@
 
 <section class="page-section clearfix">
     <div class="container">
-        <div class="bg-faded rounded p-5">
+        <div class="bg-faded rounded p-5 animated slideInUp">
             <div class="row justify-content-md-center"  id="ilanlar">
                  <%foundPosts.forEach( (d)=>{ %>
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="../images/<%= d.postImage %>""  alt="Card image cap">
                     <div class="card-body" id="ilan">
-                        <h3 class="card-title"><%= d.postTitle %></h3>
-                        <h5 class="card-text"><%= d.postType %></h5>
-                        <h5 class="card-text"><%= d.postOwnerCity %></h5>
+                        <h3 class="card-title" id="pTitle"><%= d.postTitle %></h3>
+                        <h5 class="card-text" id="pType"><%= d.postType %></h5>
+                        <h5 class="card-text" id="pCity"><%= d.postOwnerCity %></h5>
                         <h5 class="card-text"><%= d.animalGenus %> - <%= d.animalType %> </h5>
                     <%     if(d.postType=='Kayıp İlanı') { %>
                          <h5 class="card-text">Kaybolduğu Tarih: <%= d.lostDate %></h5>

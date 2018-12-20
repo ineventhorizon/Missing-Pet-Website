@@ -1,20 +1,22 @@
 <% include ./partials/admin_header %>
         
     <div class="container">
-      <div class="col-xl-9 col-lg-10 mx-auto">
+     
         <div class="bg-faded rounded p-5">
           <div class="row justify-content-md-center"  id="ilanlar">
             <% if(currentUser.userType=='Admin') { %>
             <% foundPosts.forEach( (d)=>{ %>
+              
+
+              
               <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="../images/<%= d.postImage %>"" alt="Card image cap">
                 <div class="card-body" id="ilan">
-                  <h3 class="card-title"><%= d.postTitle %></h5>
-                  <h5 class="card-text"><%= d.postType %></h1>
-                  <h5 class="card-text"><%= d.postOwnerCity %></h1>
-                  <h5 class="card-text"><%= d.animalGenus %> - <%= d.animalType %> </h1>
-                  <h5 class="card-text" id="cellPhoneNumber"><%= d.postOwnerPhone %></h1>
+                  <h3 class="card-title" id="pTitle"><%= d.postTitle %></h3>
+                  <h5 class="card-text" id="pType"><%= d.postType %></h5>
+                  <h5 class="card-text" id="pCity"><%= d.postOwnerCity %></h5>
                   <h5 class="card-text"><%= d.animalGenus %> - <%= d.animalType %> </h5>
+                  <h5 class="card-text" id="cellPhoneNumber"><%= d.postOwnerPhone %></h5>
                   <%     if(d.postType=='Kayıp İlanı') { %>
                   <h5 class="card-text">Kaybolduğu Tarih: <%= d.lostDate %></h5>
                   <% } %>
@@ -23,7 +25,7 @@
                   <% } %>
                   <p class="card-text"><%= d.postNote %></p>
                 </div>
-                <form action="/admin"method="POST" >
+                <form action="/admin"method="POST" id="confirmform">
                   <input class="form-control"  id="userCity"type="text" value="<%= d._id %>"  name="postid" readonly>
                   <button type="submit" name="butt" value="<%= d._id %>"class="btn btn-primary">Onayla</button>
                 </form>
@@ -39,6 +41,6 @@
 
             </div>
           </div>
-        </div>
+        
       </div>
 <% include ./partials/footer %>
